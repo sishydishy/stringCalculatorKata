@@ -13,5 +13,17 @@ namespace StringCalculatorKata
 
             Assert.Equal(expectedSumResult, actualSumResult);
         }
+
+        [Fact]
+        public void GivenStringContainingNumberShouldReturnInteger()
+        {
+            var expectedSumResult = 1;
+            var inputString = "1";
+            var stringCalculator = new StringCalculator();
+
+            var actualSumResult = stringCalculator.Add(inputString);
+            
+            Assert.Equal(expectedSumResult, actualSumResult);
+        }
     }
 }

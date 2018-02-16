@@ -2,9 +2,9 @@
 {
     public class  StringCalculator
     {
-        public int Add(string emptyString)
+        public int Add(string inputString)
         {
-            return 0;
+            return int.Parse(inputString);
         }
     }
 }
