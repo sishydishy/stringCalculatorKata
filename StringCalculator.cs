@@ -1,10 +1,16 @@
- namespace StringCalculatorKata
+ using System;
+
+namespace StringCalculatorKata
 {
     public class  StringCalculator
     {
         public int Add(string inputString)
         {
-            return int.Parse(inputString);
+            string[] numbers = inputString.Split(",");
+
+            var sum = int.Parse(numbers[0]) + int.Parse(numbers[1]);
+
+            return sum;
         }
     }
 }

@@ -4,26 +4,38 @@ namespace StringCalculatorKata
 {
     public class StringCalculatorTest
     {
+        private StringCalculator _stringCalculator = new StringCalculator();
+
         [Fact]
         public void GivenEmptyStringShouldReturnZero()
         {
             var expectedSumResult = 0;
-            var stringCalculator = new StringCalculator();
-            var actualSumResult = stringCalculator.Add("");
+            var actualSumResult = _stringCalculator.Add("");
 
             Assert.Equal(expectedSumResult, actualSumResult);
         }
 
         [Fact]
-        public void GivenStringContainingNumberShouldReturnInteger()
+        public void GivenStringContainingOneShouldReturnIntegerOne()
         {
             var expectedSumResult = 1;
-            var inputString = "1";
-            var stringCalculator = new StringCalculator();
+            const string inputNumber = "1";
 
-            var actualSumResult = stringCalculator.Add(inputString);
+            var actualSumResult = _stringCalculator.Add(inputNumber);
             
             Assert.Equal(expectedSumResult, actualSumResult);
+        }
+
+        [Fact]
+        public void GivenAStringOfTwoNumbersShouldReturnItsSum()
+        {
+            var expectedSumResult = 3;
+            const string inputNumbers = "1,2";
+
+            var actualSumResult = _stringCalculator.Add(inputNumbers);
+            
+            Assert.Equal(expectedSumResult,actualSumResult);
+            
         }
     }
 }
